@@ -1,7 +1,6 @@
 package com.ps.ents;
 
-import org.springframework.data.annotation.Id;
-
+import javax.persistence.Id;
 import java.math.BigInteger;
 
 /**
