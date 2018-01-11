@@ -57,8 +57,7 @@ public class JdbcNamedTemplateUserRepo implements UserRepo {
         params.put("pass", password);
         params.put("email", email);
         String query = "insert into p_user(ID, USERNAME, PASSWORD, EMAIL) values(:id,:un,:pass, :email)";
-        jdbcNamedTemplate.getJdbcOperations().update(query, params);
-        return 0;
+        return jdbcNamedTemplate.update(query, params);
     }
 
     @Override
@@ -66,8 +65,8 @@ public class JdbcNamedTemplateUserRepo implements UserRepo {
         Map<String, Object> params = new HashMap<>();
         params.put("id", userId);
         String query = "delete from p_user where id = :id";
-        jdbcNamedTemplate.getJdbcOperations().update(query, params);
-        return 0;
+        return jdbcNamedTemplate.update(query, params);
+
     }
 
     @Override
